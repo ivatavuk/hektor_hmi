@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <script type="text/javascript" src="http://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
   <script type="text/javascript" src="scripts/connect_ros.js"></script>
+  <script type="text/javascript" src="scripts/vel_visualize.js"></script>
   <link rel="stylesheet" href="styles/main.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +17,7 @@
     <p>Connection status: <span id="status"></span></p>
     <p>Last /txt_msg received: <span id="msg"></span></p>
   </div>
-  <div class="vel-visualize-box">
+  <div class="vel-visualize-box" id="vel-visualizer">
     <!--img class="vel-visualize-image" src="images/viv_driving/viv_driving_1.png" alt="VIV driving"--> 
   </div>
 </body>

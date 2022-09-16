@@ -23,21 +23,3 @@ var txt_listener = new ROSLIB.Topic({
 txt_listener.subscribe(function(m) {
   document.getElementById("msg").innerHTML = m.data;
 });
-
-
-function visualize_vel()
-{
-  let current_img = 1;
-  if(current_img == 3)
-  {
-    current_img == 1;
-  }
-  else
-  {
-    current_img = current_img + 1;
-  }
-
-  console.log(current_img);
-}
-
-visualize_vel()
