@@ -7,6 +7,7 @@
   <script type="text/javascript" src="scripts/connect_ros.js"></script>
   <script type="text/javascript" src="scripts/vel_visualize.js"></script>
   <script type="text/javascript" src="scripts/battery_visualize.js"></script>
+  <script type="text/javascript" src="scripts/status_writing.js"></script>
   <link rel="stylesheet" href="styles/main.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,16 +34,31 @@
   </header>
 
   <main class="main">
-    <section class="section secondary-color-bg">
-        <div class="container">
-          <div class="vel-visualize-img" id="vel-visualizer">
-        </div>
-    </section>
-
-    <section class="section secondary-color-bg">
-        <div class="container">
-        </div>
-    </section>
+    <div class="container-grid container-grid-halves">
+      <div class="vel-visualize-img" id="vel-visualizer"></div>
+      <table class="info-table">
+        <tr>
+          <th>Battery voltage</th>
+          <th id="battery-voltage"></th>
+        </tr>
+        <tr>
+          <th>Measured current</th>
+          <th id="measured-current"></th>
+        </tr>
+        <tr>
+          <th>Power consumption</th>
+          <th id="power-consumption"></th>
+        </tr>
+        <tr>
+          <th>Forward velocity</th>
+          <th id="viv-forward-vel"></th>
+        </tr>
+        <tr>
+          <th>Angular velocity</th>
+          <th id="viv-angular-vel"></th>
+        </tr>
+      </table>
+    </div>
   </main>
 
   <footer class="footer primary-color-bg">

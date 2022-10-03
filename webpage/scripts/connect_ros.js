@@ -1,5 +1,3 @@
-console.log("inicijalizacija skripte!");
-
 var ros = new ROSLIB.Ros({
   url : 'ws://localhost:9090'
 });
@@ -74,4 +72,24 @@ var battery_state_listener = new ROSLIB.Topic({
 
 battery_state_listener.subscribe(function(m) {
   localStorage.current_battery_percent = m.data;
+});
+
+var measured_current_listener = new ROSLIB.Topic({
+  ros : ros,
+  name : '/viv/measured_current',
+  messageType : 'std_msgs/Float64'
+});
+
+measured_current_listener.subscribe(function(m) {
+  localStorage.measured_current = m.data;
+});
+
+var battery_voltage_listener = new ROSLIB.Topic({
+  ros : ros,
+  name : '/viv/battery_voltage',
+  messageType : 'std_msgs/Float64'
+});
+
+battery_voltage_listener.subscribe(function(m) {
+  localStorage.battery_voltage = m.data;
 });

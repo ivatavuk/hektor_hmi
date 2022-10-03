@@ -144,6 +144,7 @@ body {
 }
 
 .main {
+  margin: auto;
   position: relative;
   flex-grow: 1;
 }
@@ -176,12 +177,13 @@ body {
 .container-grid-thirds {
   grid-template-columns: 2fr 1fr;
 }
-
+/*
 @media only screen and (max-width: 1280px) {
   .container-grid-thirds {
     display: block;
   }
 }
+*/
 
 .container-grid-halves {
   grid-template-columns: 1fr 1fr;
@@ -543,4 +545,10 @@ body {
   font-family: 'Roboto', sans-serif;
   color: #ffffff;
   font-size: 13px;
+}
+
+.info-table {
+  margin-bottom: auto;
+  margin-top: auto;
+  font-size: 15px;
 }
