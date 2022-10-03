@@ -457,7 +457,7 @@ body {
   color: antiquewhite;
 }
 
-.vel-visualize-box { 
+.vel-visualize-img { 
   width: 600px;
   height: 400px;
   background-size: contain;
@@ -465,19 +465,30 @@ body {
   margin: auto;
 }
 
-.vel-visualize-box-spraying { 
+.vel-visualize-img-spraying { 
   width: 400px;
   height: 400px;
   background-size: contain;
   background-repeat: no-repeat;
 }
 
-.battery-visualize-box { 
-  width: 180px;
-  height: 35px;
+.battery-visualize-img { 
+  width: 80px;
+  height: 40px;
   background-size: contain;
   background-repeat: no-repeat;
+  margin: auto;
+}
+.battery-visualize-box { 
+  display: grid;
+  grid-template-rows: 2fr 1fr;
+  width: 150px;
+  height: 90px;
   margin-left: auto;
+}
+.battery-visualize-text { 
+  color: #ffffff;
+  margin: auto;
 }
 
 .hektor-logo {
