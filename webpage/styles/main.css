@@ -1,18 +1,34 @@
-
 * {
-  background-color: rgb(151, 151, 151);
-  font-family: 'Roboto', sans-serif;;
-}
-
-.titles {
   font-family: 'Roboto', sans-serif;
-  text-align: center;
 }
 
-.vel-visualize-box {
+.header {
+  display: block;
+  background-color: #035f93;
+  height: 100px;
+}
+
+.main-div {
+  display: grid;
+  grid-row: 1fr 5fr;
+}
+
+.title {
+  display: block;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  color: antiquewhite;
+}
+
+.vel-visualize-box { 
   width: 500px;
   height: 500px;
-  background-image: url("../images/viv_driving/viv_driving_1.png");
   background-size: contain;
   background-repeat: no-repeat;
+}
+
+.hektor-logo {
+  background-image: "url https://i0.wp.com/hektor.fer.hr/wp-content/uploads/2020/07/Hektor_PRIMARY-LOGOTYPE-monochrome-negative.png?fit=1191%2C231&ssl=1";
+  width: 180; 
+  height: 35;
 }

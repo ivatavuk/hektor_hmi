@@ -21,7 +21,7 @@ function timerCallback() {
 
   try
   {
-    document.getElementById("vel-visualizer").style.backgroundImage="url('../images/viv_driving/viv_driving_" + current_img + ".png')";
+    document.getElementById("vel-visualizer").style.backgroundImage="url('../images/viv_driving/transparent/viv_driving_" + current_img + "_transparent.png')";
   }
   catch
   {
