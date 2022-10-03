@@ -1,12 +1,12 @@
 // vel_visualize
-var current_img = 1;
-var visualization_started = false;
+var current_vel_img = 1;
+var vel_visualization_started = false;
 var cmd_vel_x = 0.1;
 var intervalID = window.setInterval(timerCallback, 100);
 function timerCallback() {
-  if(cmd_vel_x == 0 && visualization_started == false)
+  if(cmd_vel_x == 0 && vel_visualization_started == false)
   {
-    visualization_started = true;
+    vel_visualization_started = true;
     return;
   }
   
@@ -21,7 +21,7 @@ function timerCallback() {
   }
   try
   {
-    document.getElementById("vel-visualizer").style.backgroundImage="url('images/viv_driving/transparent/viv_driving_" + current_img + "_transparent.png')";
+    document.getElementById("vel-visualizer").style.backgroundImage="url('images/viv_driving/transparent/viv_driving_" + current_vel_img + "_transparent.png')";
   }
   catch
   {
@@ -32,19 +32,19 @@ function timerCallback() {
 
 function go_forward()
 {
-  current_img = current_img + 1;
-  if(current_img == 4)
+  current_vel_img = current_vel_img + 1;
+  if(current_vel_img == 4)
   {
-    current_img = 1;
+    current_vel_img = 1;
   }
 }
 
 function go_backward()
 {
-  current_img = current_img - 1;
-  if(current_img == 0)
+  current_vel_img = current_vel_img - 1;
+  if(current_vel_img == 0)
   {
-    current_img = 3;
+    current_vel_img = 3;
   }
 }
 

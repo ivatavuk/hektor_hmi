@@ -459,7 +459,7 @@ body {
 
 .vel-visualize-box { 
   width: 600px;
-  height: 600px;
+  height: 400px;
   background-size: contain;
   background-repeat: no-repeat;
   margin: auto;
@@ -470,6 +470,14 @@ body {
   height: 400px;
   background-size: contain;
   background-repeat: no-repeat;
+}
+
+.battery-visualize-box { 
+  width: 180px;
+  height: 35px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-left: auto;
 }
 
 .hektor-logo {
