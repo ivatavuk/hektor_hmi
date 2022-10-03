@@ -1,7 +1,7 @@
 // Battery_visualize
 var battery_current_img = 1;
 var battery_visualization_started = false;
-var current_battery_percent = 78.32;
+var current_battery_percent = 68.32;
 const battery_segment_num = 5;
 var intervalID = window.setInterval(batteryTimerCallback, 100);
 function batteryTimerCallback() {

@@ -2,8 +2,8 @@
 var tank_current_img_left = 1;
 var tank_current_img_right = 1;
 var max_tank_volume = 15;
-var current_tank_volume_left = 4.32;
-var current_tank_volume_right = 3.32;
+var current_tank_volume_left = 5.32;
+var current_tank_volume_right = 12.32;
 const tank_segment_num = 9;
 var intervalID = window.setInterval(tankTimerCallback, 100);
 
