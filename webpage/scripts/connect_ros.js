@@ -75,3 +75,13 @@ tank_front_listener.subscribe(function(m) {
     console.log("/viv/tank_front listener => couldn't write to tank right");
   }
 });
+
+var battery_state_listener = new ROSLIB.Topic({
+  ros : ros,
+  name : '/viv/battery_state',
+  messageType : 'std_msgs/Float64'
+});
+
+battery_state_listener.subscribe(function(m) {
+  update_battery_state(m.data);
+});
