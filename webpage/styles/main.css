@@ -166,7 +166,6 @@ body {
 
 .container {
   margin: auto;
-  width: 700px;
 }
 
 .container-grid {
@@ -459,8 +458,16 @@ body {
 }
 
 .vel-visualize-box { 
-  width: 500px;
-  height: 500px;
+  width: 600px;
+  height: 600px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: auto;
+}
+
+.vel-visualize-box-spraying { 
+  width: 400px;
+  height: 400px;
   background-size: contain;
   background-repeat: no-repeat;
 }

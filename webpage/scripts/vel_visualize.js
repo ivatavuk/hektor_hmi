@@ -1,11 +1,12 @@
 // vel_visualize
 var current_img = 1;
-const cmd_vel_x = 1.0;
+var visualization_started = false;
+var cmd_vel_x = 0.1;
 var intervalID = window.setInterval(timerCallback, 100);
-
 function timerCallback() {
-  if(cmd_vel_x == 0)
+  if(cmd_vel_x == 0 && visualization_started == false)
   {
+    visualization_started = true;
     return;
   }
   
@@ -18,15 +19,15 @@ function timerCallback() {
   {
     go_backward();
   }
-
   try
   {
-    document.getElementById("vel-visualizer").style.backgroundImage="url('../images/viv_driving/transparent/viv_driving_" + current_img + "_transparent.png')";
+    document.getElementById("vel-visualizer").style.backgroundImage="url('images/viv_driving/transparent/viv_driving_" + current_img + "_transparent.png')";
   }
   catch
   {
-    console.log("asdfasdf");  
+    console.log("vel_visualize.js ERR => Failed to get VIV driving image!");  
   }
+  
 }
 
 function go_forward()

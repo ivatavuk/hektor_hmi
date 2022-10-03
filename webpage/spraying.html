@@ -4,7 +4,7 @@
   <title>VIV HMI</title>
   <meta charset="utf-8" />
   <script type="text/javascript" src="http://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
-  <script type="text/javascript" src="scripts/connect_ros.js"></script>
+  <!--script type="text/javascript" src="scripts/connect_ros.js"></script-->
   <script type="text/javascript" src="scripts/vel_visualize.js"></script>
   <link rel="stylesheet" href="styles/main.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,6 +26,7 @@
   <main class="main">
     <section class="section secondary-color-bg">
         <div class="container">
+          <div class="vel-visualize-box-spraying" id="vel-visualizer">
         </div>
     </section>
 
@@ -38,12 +39,12 @@
   <footer class="footer primary-color-bg">
     <div class="container">
         <div class="menu menu-distributed">
-            <div class="infobox infobox-marginless infobox-copyright">
+            <div class="infobox infobox-marginless">
                 <h4 class="infobox-title infobox-title-secondary-color main-color-emphasized">
                   VIV HMI
                 </h4>
             </div>
-            <div class="infobox infobox-marginless infobox-flower">
+            <div class="infobox infobox-marginless">
                 <h4 class="infobox-title infobox-title-secondary-color main-color-emphasized">
                   http://hektor.fer.hr
                 </h4>
