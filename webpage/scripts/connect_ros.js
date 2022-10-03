@@ -20,15 +20,11 @@ ros.on('close', function() {
 }
 );
 
-console.log("tu smo");
-
 var cmd_vel_listener = new ROSLIB.Topic({
   ros : ros,
-  name : '/cmd_vel',
+  name : '/viv/cmd_vel',
   messageType : 'geometry_msgs/Twist'
 });
-
-console.log(cmd_vel_listener);
 
 cmd_vel_listener.subscribe(function(m) {
   update_cmd_vel_x(m.linear.x);
@@ -40,6 +36,42 @@ cmd_vel_listener.subscribe(function(m) {
   }
   catch
   {
-    console.log("cmd_vel listener => couldn't write to viv-forward-vel and viv-angular-vel");
+    console.log("/viv/cmd_vel listener => couldn't write to viv-forward-vel and viv-angular-vel");
+  }
+});
+
+var tank_back_listener = new ROSLIB.Topic({
+  ros : ros,
+  name : '/viv/tank_back',
+  messageType : 'std_msgs/Float64'
+});
+
+tank_back_listener.subscribe(function(m) {
+  update_back_tank_volume(m.data);
+  try
+  {
+    document.getElementById("tank-visualizer-text-left").innerHTML = Math.round(m.data * 10) / 10 + " L";
+  }
+  catch
+  {
+    console.log("/viv/tank_back listener => couldn't write to tank left");
+  }
+});
+
+var tank_front_listener = new ROSLIB.Topic({
+  ros : ros,
+  name : '/viv/tank_front',
+  messageType : 'std_msgs/Float64'
+});
+
+tank_front_listener.subscribe(function(m) {
+  update_front_tank_volume(m.data);
+  try
+  {
+    document.getElementById("tank-visualizer-text-right").innerHTML = Math.round(m.data * 10) / 10 + " L";
+  }
+  catch
+  {
+    console.log("/viv/tank_front listener => couldn't write to tank right");
   }
 });

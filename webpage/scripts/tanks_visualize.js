@@ -2,10 +2,20 @@
 var tank_current_img_left = 1;
 var tank_current_img_right = 1;
 var max_tank_volume = 15;
-var current_tank_volume_left = 5.32;
-var current_tank_volume_right = 12.32;
+var current_tank_volume_left = 15.0;
+var current_tank_volume_right = 15.0;
 const tank_segment_num = 9;
 var intervalID = window.setInterval(tankTimerCallback, 100);
+
+function update_back_tank_volume(volume)
+{
+  current_tank_volume_left = volume;
+}
+
+function update_front_tank_volume(volume)
+{
+  current_tank_volume_right = volume;
+}
 
 function select_tank_image_number(current_tank_volume)
 {
