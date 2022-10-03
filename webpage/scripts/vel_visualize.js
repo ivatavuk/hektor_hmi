@@ -1,15 +1,9 @@
 // vel_visualize
 var current_vel_img = 1;
-var vel_visualization_started = false;
-var cmd_vel_x = 0.1;
+var cmd_vel_x = -0.1;
+var cmd_angular_vel_z = 0.1;
 var intervalID = window.setInterval(timerCallback, 100);
 function timerCallback() {
-  if(cmd_vel_x == 0 && vel_visualization_started == false)
-  {
-    vel_visualization_started = true;
-    return;
-  }
-  
   if(cmd_vel_x > 0.0)
   {
     go_forward();
@@ -26,6 +20,16 @@ function timerCallback() {
   catch
   {
     console.log("vel_visualize.js ERR => Failed to get VIV driving image!");  
+  }
+  
+  try
+  {
+    document.getElementById("viv-forward-vel").innerHTML = cmd_vel_x + " m/s";
+    document.getElementById("viv-angular-vel").innerHTML = cmd_angular_vel_z + " rad/s";
+  }
+  catch
+  {
+    console.log("vel_visualize.js ERR => Failed to get vel visualizer text!");  
   }
   
 }
