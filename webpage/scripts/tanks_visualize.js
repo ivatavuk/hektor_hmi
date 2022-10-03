@@ -2,8 +2,8 @@
 var tank_current_img_left = 1;
 var tank_current_img_right = 1;
 var max_tank_volume = 15;
-var current_tank_volume_left = 9.32;
-var current_tank_volume_right = 2.32;
+var current_tank_volume_left = 4.32;
+var current_tank_volume_right = 3.32;
 const tank_segment_num = 9;
 var intervalID = window.setInterval(tankTimerCallback, 100);
 
@@ -42,8 +42,8 @@ function tankTimerCallback() {
   }
   try
   {
-    document.getElementById("tank-visualizer-text-left").innerHTML = Math.round(current_tank_volume_left) + " L";
-    document.getElementById("tank-visualizer-text-right").innerHTML = Math.round(current_tank_volume_right) + " L";
+    document.getElementById("tank-visualizer-text-left").innerHTML = Math.round(current_tank_volume_left * 10) / 10 + " L";
+    document.getElementById("tank-visualizer-text-right").innerHTML = Math.round(current_tank_volume_right * 10) / 10 + " L";
   }
   catch
   {
