@@ -4,7 +4,7 @@
   <title>VIV HMI</title>
   <meta charset="utf-8" />
   <script type="text/javascript" src="http://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
-  <!--script type="text/javascript" src="scripts/connect_ros.js"></script-->
+  <script type="text/javascript" src="scripts/connect_ros.js"></script>
   <script type="text/javascript" src="scripts/vel_visualize.js"></script>
   <script type="text/javascript" src="scripts/battery_visualize.js"></script>
   <link rel="stylesheet" href="styles/main.css">
@@ -20,6 +20,10 @@
         <img src="images/Hektor_PRIMARY-LOGOTYPE-monochrome-negative.webp" alt="HEKTOR" style="width: 200px;">
           <a href="index.html" class="link link-active menu-item">Info</a>
           <a href="spraying.html" class="link menu-item last-menu-item">Spraying</a>
+          <div class="ros-status">
+            <div>ROS STATUS:</div>
+            <div id="ros-status"></div>
+          </div>
           <div class="battery-visualize-box">
             <div class="battery-visualize-img" id="battery-visualizer-img"> </div>
             <div class="battery-visualize-text" id="battery-visualizer-text"></div>  

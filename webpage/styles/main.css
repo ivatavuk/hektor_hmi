@@ -537,3 +537,11 @@ body {
 .last-menu-item {
   margin-right: auto;
 }
+
+.ros-status {
+  display: grid;
+  grid-template-rows: auto auto;
+  font-family: 'Roboto', sans-serif;
+  color: #ffffff;
+  font-size: 13px;
+}
