@@ -469,7 +469,6 @@ body {
   display: grid;
   grid-template-rows: 2fr 1fr;
   width: 150px;
-  height: 90px;
 }
 .battery-visualize-text { 
   color: #ffffff;
