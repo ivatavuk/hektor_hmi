@@ -4,7 +4,8 @@ var ros = new ROSLIB.Ros({
 
 ros.on('connection', function() {
   try {
-    document.getElementById("ros-status").innerHTML = "Connected";
+    document.getElementById("ros-status").innerHTML = "CONNECTED";
+    document.getElementById("ros-status").style = "color: #30ff30;";
   }
   catch
   {
@@ -14,7 +15,8 @@ ros.on('connection', function() {
 
 ros.on('error', function(error) {
   try {
-    document.getElementById("ros-status").innerHTML = "Error";
+    document.getElementById("ros-status").innerHTML = "ERROR";
+    document.getElementById("ros-status").style = "color: rgb(255, 34, 34);";
   }
   catch
   {
@@ -24,7 +26,8 @@ ros.on('error', function(error) {
 
 ros.on('close', function() {
   try {
-    document.getElementById("ros-status").innerHTML = "Closed";
+    document.getElementById("ros-status").innerHTML = "CLOSED";
+    document.getElementById("ros-status").style = "color: rgb(255, 34, 34);";
   }
   catch
   {

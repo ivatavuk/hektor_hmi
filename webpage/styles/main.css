@@ -546,8 +546,12 @@ body {
   font-family: 'Roboto', sans-serif;
   color: #ffffff;
   font-size: 13px;
+  text-align: center;
 }
 
+#ros-status {
+  font-weight: bolder;
+}
 .info-table {
   margin-bottom: auto;
   margin-top: auto;
