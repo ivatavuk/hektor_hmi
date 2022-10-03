@@ -7,6 +7,7 @@
   <!--script type="text/javascript" src="scripts/connect_ros.js"></script-->
   <script type="text/javascript" src="scripts/vel_visualize.js"></script>
   <script type="text/javascript" src="scripts/battery_visualize.js"></script>
+  <script type="text/javascript" src="scripts/tanks_visualize.js"></script>
   <link rel="stylesheet" href="styles/main.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,7 +47,16 @@
               </table>
             </div>  
           </div>
-          
+        </div>
+        <div class="container">
+          <div class="tank-visualize-box">
+            <div class="tank-visualize-img" id="tank-visualizer-img-left"></div> 
+            <div class="tank-visualize-text" id="tank-visualizer-text-left"></div>  
+          </div>
+          <div class="tank-visualize-box">
+            <div class="tank-visualize-img" id="tank-visualizer-img-right"></div> 
+            <div class="tank-visualize-text" id="tank-visualizer-text-right"></div>  
+          </div>
         </div>
     </section>
 

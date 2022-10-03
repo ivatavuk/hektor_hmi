@@ -477,10 +477,8 @@ body {
 }
 
 .vel-visualize-box-spraying {
-  width: 400px;
-  height: 350px;
   display: grid;
-  grid-template-rows: 2fr 1fr;
+  grid-template-rows: auto auto;
 }
 
 .vel-visualize-img { 
@@ -508,4 +506,21 @@ body {
   margin-left: 20px;
   font-family: 'Roboto', sans-serif;
   color: black;
+}
+
+.tank-visualize-img { 
+  width: 110px;
+  height: 110px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: auto;
+}
+.tank-visualize-box { 
+  display: grid;
+  grid-template-rows: auto auto;
+  margin: auto;
+}
+.tank-visualize-text { 
+  color: black;
+  margin: auto;
 }

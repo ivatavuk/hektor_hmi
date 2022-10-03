@@ -7,7 +7,7 @@ var intervalID = window.setInterval(batteryTimerCallback, 100);
 function batteryTimerCallback() {
   if (current_battery_percent != 100 && current_battery_percent != 0)
   {
-    battery_current_img = 5 - Math.floor(current_battery_percent / (100 / battery_segment_num));
+    battery_current_img = battery_segment_num - Math.floor(current_battery_percent / (100 / battery_segment_num));
   }
   else if(current_battery_percent == 100)
   {
@@ -15,7 +15,7 @@ function batteryTimerCallback() {
   }
   else if(current_battery_percent == 0)
   {
-    battery_current_img = 5;
+    battery_current_img = battery_segment_num;
   }
   try
   {
