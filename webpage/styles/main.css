@@ -541,6 +541,7 @@ body {
 
 .ros-status {
   display: grid;
+  margin-left: 30px;
   grid-template-rows: auto auto;
   font-family: 'Roboto', sans-serif;
   color: #ffffff;
