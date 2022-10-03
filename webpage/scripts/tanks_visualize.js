@@ -7,16 +7,6 @@ var current_tank_volume_right = 15.0;
 const tank_segment_num = 9;
 var intervalID = window.setInterval(tankTimerCallback, 100);
 
-function update_back_tank_volume(volume)
-{
-  current_tank_volume_left = volume;
-}
-
-function update_front_tank_volume(volume)
-{
-  current_tank_volume_right = volume;
-}
-
 function select_tank_image_number(current_tank_volume)
 {
   let tank_volume_percentage = current_tank_volume / max_tank_volume * 100.0;
@@ -37,7 +27,14 @@ function select_tank_image_number(current_tank_volume)
 }
 
 function tankTimerCallback() {
-  
+
+  current_tank_volume_left = localStorage.backTankVolume;
+  current_tank_volume_right = localStorage.frontTankVolume;
+  if(!current_tank_volume_left)
+    current_tank_volume_left = 15.0;
+  if(!current_tank_volume_right)
+    current_tank_volume_right = 15.0;
+    
   tank_current_img_left = select_tank_image_number(current_tank_volume_left);
   tank_current_img_right = select_tank_image_number(current_tank_volume_right);
   

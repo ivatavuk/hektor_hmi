@@ -7,10 +7,15 @@ var intervalID = window.setInterval(batteryTimerCallback, 100);
 
 function update_battery_state(state)
 {
-  current_battery_percent = state;
+  localStorage.current_battery_percent = state;
 }
 
 function batteryTimerCallback() {
+  if(localStorage.current_battery_percent)
+    current_battery_percent = localStorage.current_battery_percent;
+  else
+    current_battery_percent = 100;
+    
   if (current_battery_percent != 100 && current_battery_percent != 0)
   {
     battery_current_img = battery_segment_num - Math.floor(current_battery_percent / (100 / battery_segment_num));

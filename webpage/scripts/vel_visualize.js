@@ -15,19 +15,10 @@ function update_cmd_angular_vel_z (vel_z)
 
 var vel_visualize_init = true;
 function timerCallback() {
-  if(vel_visualize_init)
-  {
-    try 
-    {
-      document.getElementById("viv-forward-vel").innerHTML = cmd_vel_x + " m/s";
-      document.getElementById("viv-angular-vel").innerHTML = cmd_angular_vel_z + " rad/s";
-      vel_visualize_init = false;
-    }
-    catch
-    {
-      console.log("err");
-    }
-  }
+  cmd_vel_x = localStorage.forwardVel;
+  cmd_vel_angular_z = localStorage.angularVel;
+  if(!cmd_vel_x) cmd_vel_x = 0.0;
+  if(!cmd_vel_angular_z) cmd_vel_angular_z = 0.0;
 
   if(cmd_vel_x > 0.0) { go_forward(); }
 
@@ -37,6 +28,16 @@ function timerCallback() {
     document.getElementById("vel-visualizer").style.backgroundImage="url('images/viv_driving/transparent/viv_driving_" + current_vel_img + "_transparent.png')";
   }
   catch { console.log("vel_visualize.js ERR => Failed to get VIV driving image!"); }
+
+  try
+  {
+    document.getElementById("viv-forward-vel").innerHTML = Math.round(cmd_vel_x * 1000) / 1000 + " m/s";
+    document.getElementById("viv-angular-vel").innerHTML = Math.round(cmd_vel_angular_z * 1000) / 1000 + " rad/s";
+  }
+  catch
+  {
+    console.log("/viv/cmd_vel listener => couldn't write to viv-forward-vel and viv-angular-vel");
+  }
 }
 
 function go_forward()
