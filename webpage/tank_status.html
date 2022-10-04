@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>VIV HMI</title>
+  <meta charset="utf-8" />
+  <script type="text/javascript" src="http://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
+  <script type="text/javascript" src="scripts/connect_ros.js"></script>
+  <script type="text/javascript" src="scripts/vel_visualize.js"></script>
+  <script type="text/javascript" src="scripts/battery_visualize.js"></script>
+  <script type="text/javascript" src="scripts/tanks_visualize.js"></script>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet"> 
+</head>
+
+<body class="content">      
+  <header class="header header-fixed header-search primary-color-bg">
+    <nav class="navigation container">
+      <div class="menu">
+        <img src="images/Hektor_PRIMARY-LOGOTYPE-monochrome-negative.webp" alt="HEKTOR" style="width: 200px;">
+        <a href="index.html" class="link menu-item">Status</a>
+        <a href="spraying.html" class="link link-active menu-item last-menu-item">Spraying</a>
+        
+        <div class="vel-visualize-box-spraying">
+          <div class="vel-visualize-img-spraying" id="vel-visualizer"></div>  
+          <div class="vel-visualize-text-spraying">
+            <table>
+              <tr>
+                <th>Forward velocity = </th>
+                <th id="viv-forward-vel"></th>
+              </tr>
+              <tr>
+                <th>Angular velocity = </th>
+                <th id="viv-angular-vel"></th>
+              </tr>
+            </table>
+          </div>  
+        </div>
+
+        <div class="ros-status">
+          <div>ROS BRIDGE STATUS</div>
+          <div id="ros-status"></div>
+        </div>
+
+        <div class="battery-visualize-box">
+          <div class="battery-visualize-img" id="battery-visualizer-img"> </div>
+          <div class="battery-visualize-text" id="battery-visualizer-text"></div>  
+        </div>
+      
+      </div>
+    </nav>
+  </header>
+
+  <main class="main">
+    <div style="margin-top: 100px;">
+      <div class="tank-visualize-boxes">
+        <div class="tank-visualize-box">
+          <div class="tank-visualize-text" id="tank-visualizer-text-left"></div>  
+          <div class="tank-visualize-img" id="tank-visualizer-img-left"></div> 
+        </div>
+        <div class="tank-visualize-box">
+          <div class="tank-visualize-text" id="tank-visualizer-text-right"></div> 
+          <div class="tank-visualize-img" id="tank-visualizer-img-right"></div>  
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer primary-color-bg">
+    <div class="container">
+        <div class="menu menu-distributed">
+            <div class="infobox infobox-marginless">
+                <h4 class="infobox-title infobox-title-secondary-color main-color-emphasized">
+                  VIV HMI
+                </h4>
+            </div>
+            <div class="infobox infobox-marginless">
+                <h4 class="infobox-title infobox-title-secondary-color main-color-emphasized">
+                  http://hektor.fer.hr
+                </h4>
+            </div>
+        </div>
+    </div>
+  </footer>
+</body>
+</html>
