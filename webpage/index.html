@@ -4,10 +4,6 @@
   <title>VIV HMI</title>
   <meta charset="utf-8" />
   <script type="text/javascript" src="http://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
-  <script type="text/javascript" src="scripts/viv/connect_ros_viv.js"></script>
-  <script type="text/javascript" src="scripts/viv/vel_visualize_viv.js"></script>
-  <script type="text/javascript" src="scripts/viv/battery_visualize_viv.js"></script>
-  <script type="text/javascript" src="scripts/viv/status_writing_viv.js"></script>
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="styles/masterslider.main.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,93 +16,27 @@
     <nav class="navigation container">
       <div class="menu">
         <img src="images/Hektor_PRIMARY-LOGOTYPE-monochrome-negative.webp" alt="HEKTOR" style="width: 200px;">
-          <a href="index.html" class="link link-active menu-item">Status</a>
-          <a href="spraying.html" class="link menu-item last-menu-item">Spraying</a>
-          <div class="ros-status">
-            <div>ROS BRIDGE STATUS</div>
-            <div id="ros-status"></div>
-          </div>
-          <div class="battery-visualize-box">
-            <div class="battery-visualize-img" id="battery-visualizer-img"> </div>
-            <div class="battery-visualize-text" id="battery-visualizer-text"></div>  
-          </div>
+          <a href="index.html" class="link link-active menu-item">Home</a>
+          <a href="viv_status.html" class="link menu-item">VIV</a>
+          <a href="uav_status.html" class="link menu-item last-menu-item">UAV</a>
       </div>
     </nav>
   </header>
 
   <main class="main">
+    <h1>HEKTOR HMI</h1>
+    <p>Click on the robot you want to monitor</p>
     <div class="container-grid container-grid-halves">
-      <div class="vel-visualize-img" id="vel-visualizer">
-
-        <div class="tooltip kinova-tooltip">
-          <a href="kinova_status.html">
-            <img src="images/button.png" class="tooltip-button">
-          </a>
-            <div class="right">
-              <img src="images/Hektor_PRIMARY-LOGOTYPE-monochrome-negative.webp" style="width: 100px;"/>
-              <div class="text-content">
-                  <h3>KINOVA GEN 3</h3>
-              </div>
-              <i></i>
-          </div>
-        </div>
-
-        <div class="tooltip tank-tooltip">
-
-          <a href="tank_status.html">
-            <img src="images/button.png" class="tooltip-button">
-          </a>
-          <div class="right">
-              <img src="images/Hektor_PRIMARY-LOGOTYPE-monochrome-negative.webp" style="width: 100px;"/>
-              <div class="text-content">
-                  <h3>FLUID TANKS</h3>
-              </div>
-              <i></i>
-          </div>
-        </div>
-
-        <div class="tooltip drives-tooltip">
-          <a href="motor_drive_status.html">
-            <img src="images/button.png" class="tooltip-button">
-          </a>
-          <div class="right">
-              <img src="images/Hektor_PRIMARY-LOGOTYPE-monochrome-negative.webp" style="width: 100px;"/>
-              <div class="text-content">
-                  <h3>MOTOR DRIVES</h3>
-              </div>
-              <i></i>
-          </div>
-        </div>
-
+      <div style="margin-top: 100px;">
+        <a href="viv_status.html">
+          <img src="images/viv_driving/transparent/viv_driving_1_transparent.png" class="home-image"/>
+        </a>
       </div>
-      <!--div class="ms-tooltip-point">
-        <div class="ms-point-center"></div>
-        <div class="ms-point-border"></div>
+      <div style="margin-top: 100px;">
+        <a href="uav_status.html">
+          <img src="images/uav_transparent.png" class="home-image"/>
+        </a>
       </div>
-      <div class="ms-layer ms-hover-active" style="top: 305.366px; left: 286.829px; margin: 0px; padding: 0px; transform-origin: 50% 50% 0px;"></div-->
-      <table class="info-table">
-        <tr>
-          <th>Battery voltage</th>
-          <th id="battery-voltage"></th>
-        </tr>
-        <tr>
-          <th>Measured current</th>
-          <th id="measured-current"></th>
-        </tr>
-        <tr>
-          <th>Power consumption</th>
-          <th id="power-consumption"></th>
-        </tr>
-        <tr>
-          <th>Forward velocity</th>
-          <th id="viv-forward-vel"></th>
-        </tr>
-        <tr>
-          <th>Angular velocity</th>
-          <th id="viv-angular-vel"></th>
-        </tr>
-      </table>
-    </div>
   </main>
 
   <footer class="footer primary-color-bg">

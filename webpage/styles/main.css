@@ -655,3 +655,12 @@ body {
   left: 195px;
   top: 470px;
 }
+
+.home-image {
+  width: 650px; 
+}
+.home-image:hover {
+  width: 660px;
+  margin-left: -5px;
+  margin-top: -5px; 
+}
