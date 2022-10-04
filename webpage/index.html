@@ -9,6 +9,7 @@
   <script type="text/javascript" src="scripts/battery_visualize.js"></script>
   <script type="text/javascript" src="scripts/status_writing.js"></script>
   <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/masterslider.main.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet"> 
@@ -34,8 +35,28 @@
   </header>
 
   <main class="main">
+    <div class="tooltip">
+      <img src="images/button.png" class="tooltip-button">
+      <div class="right">
+          <img src="images/Hektor_PRIMARY-LOGOTYPE-monochrome-negative.webp" style="width: 100px;"/>
+          <div class="text-content">
+              <h3>Fade in Effect</h3>
+              <ul>
+                  <li>This demo has fade in/out effect.</li>
+                  <li>It is using CSS opacity, visibility, and transition property to toggle the tooltip.</li>
+                  <li>Other demos are using display property<em>(none or block)</em> for the toggle.</li>
+              </ul>
+          </div>
+          <i></i>
+      </div>
+    </div>
     <div class="container-grid container-grid-halves">
       <div class="vel-visualize-img" id="vel-visualizer"></div>
+      <!--div class="ms-tooltip-point">
+        <div class="ms-point-center"></div>
+        <div class="ms-point-border"></div>
+      </div>
+      <div class="ms-layer ms-hover-active" style="top: 305.366px; left: 286.829px; margin: 0px; padding: 0px; transform-origin: 50% 50% 0px;"></div-->
       <table class="info-table">
         <tr>
           <th>Battery voltage</th>
