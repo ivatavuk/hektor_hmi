@@ -620,10 +620,12 @@ body {
 }
 
 .tooltip-button {
-  width: 35px;
+  width: 25px;
 }
 .tooltip-button:hover {
-  width: 40px;
+  width: 30px;
+  margin-left: -2.5px;
+  margin-top: -2.5px;
 }
 
 .kinova-tooltip {
