@@ -5,17 +5,14 @@ var current_battery_percent = 100.0;
 const battery_segment_num = 5;
 var intervalID = window.setInterval(batteryTimerCallback, 100);
 
-function update_battery_state(state)
-{
-  localStorage.current_battery_percent = state;
-}
-
 function batteryTimerCallback() {
-  if(localStorage.current_battery_percent)
-    current_battery_percent = localStorage.current_battery_percent;
-  else
+  
+  viv_status = JSON.parse(localStorage.getItem('viv'));
+  current_battery_percent = viv_status.current_battery_percent;
+  
+  if(!current_battery_percent)
     current_battery_percent = 100;
-    
+
   if (current_battery_percent != 100 && current_battery_percent != 0)
   {
     battery_current_img = battery_segment_num - Math.floor(current_battery_percent / (100 / battery_segment_num));

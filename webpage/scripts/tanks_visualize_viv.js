@@ -28,8 +28,9 @@ function select_tank_image_number(current_tank_volume)
 
 function tankTimerCallback() {
 
-  current_tank_volume_left = localStorage.backTankVolume;
-  current_tank_volume_right = localStorage.frontTankVolume;
+  viv_status = JSON.parse(localStorage.getItem('viv'));
+  current_tank_volume_left = viv_status.backTankVolume;
+  current_tank_volume_right = viv_status.frontTankVolume;
   if(!current_tank_volume_left)
     current_tank_volume_left = 15.0;
   if(!current_tank_volume_right)
