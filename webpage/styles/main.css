@@ -620,8 +620,26 @@ body {
 }
 
 .tooltip-button {
-  width: 20px;
+  width: 35px;
 }
 .tooltip-button:hover {
-  width: 30px;
+  width: 40px;
+}
+
+.kinova-tooltip {
+  position: absolute;
+  left: 165px;
+  top:140px;
+}
+
+.tank-tooltip {
+  position: absolute;
+  left: 340px;
+  top:250px;
+}
+
+.drives-tooltip {
+  position: absolute;
+  left: 95px;
+  top: 250px;
 }
