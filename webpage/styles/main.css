@@ -566,6 +566,20 @@ body {
   margin-bottom: auto;
   margin-top: auto;
   font-size: 20px;
+  width: 500px;
+}
+
+.info-table-right-column {
+  width: 250px;
+}
+
+.info-table-right-column-small {
+  width: 80px;
+  text-align: right;
+}
+
+.info-table-left-column {
+  width: 350px;
 }
 
 .tooltip {

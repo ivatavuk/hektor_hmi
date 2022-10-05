@@ -41,7 +41,7 @@ ros.on('close', function() {
 
 var cmd_vel_listener = new ROSLIB.Topic({
   ros : ros,
-  name : '/viv/cmd_vel',
+  name : '/viv/viv_velocity_controller/cmd_vel',
   messageType : 'geometry_msgs/Twist'
 });
 
