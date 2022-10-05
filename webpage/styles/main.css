@@ -172,7 +172,6 @@ body {
 
 .container-grid {
   display: grid;
-  grid-gap: 20px;
 }
 
 .container-grid-thirds {
@@ -562,11 +561,20 @@ body {
 #ros-status {
   font-weight: bolder;
 }
+.info-table-div {
+  background-color: #444444;
+  border-radius:8px 0px 0px 8px;
+}
+
 .info-table {
-  margin-bottom: auto;
-  margin-top: auto;
+  /*margin-bottom: auto;
+  margin-top: auto;*/
+  margin: auto;
+
   font-size: 20px;
   width: 500px;
+  color: white;
+  padding: 50px;
 }
 
 .info-table-right-column {
