@@ -27,8 +27,13 @@ function select_tank_image_number(current_tank_volume)
 }
 
 function tankTimerCallback() {
-
-  viv_status = JSON.parse(localStorage.getItem('viv'));
+  if(!localStorage.getItem('viv')) {
+    viv_status = {};
+  }
+  else {
+    viv_status = JSON.parse(localStorage.getItem('viv'));
+  }
+  
   current_tank_volume_left = viv_status.backTankVolume;
   current_tank_volume_right = viv_status.frontTankVolume;
   if(!current_tank_volume_left)

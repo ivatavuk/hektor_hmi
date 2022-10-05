@@ -15,8 +15,13 @@ function update_cmd_angular_vel_z (vel_z)
 
 var vel_visualize_init = true;
 function timerCallback() {
-
-  viv_status = JSON.parse(localStorage.getItem('viv'));
+  if(!localStorage.getItem('viv')) {
+    viv_status = {};
+  }
+  else {
+    viv_status = JSON.parse(localStorage.getItem('viv'));
+  }
+  
   cmd_vel_x = viv_status.forwardVel;
   cmd_vel_angular_z = viv_status.angularVel;
   if(!cmd_vel_x) cmd_vel_x = 0.0;

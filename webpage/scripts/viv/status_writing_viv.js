@@ -4,7 +4,13 @@ var measured_current = 0.0;
 var intervalID = window.setInterval(statusTimerCallback, 100);
 
 function statusTimerCallback() {
-  viv_status = JSON.parse(localStorage.getItem('viv'));
+  if(!localStorage.getItem('viv')) {
+    viv_status = {};
+  }
+  else {
+    viv_status = JSON.parse(localStorage.getItem('viv'));
+  }
+  
   battery_voltage = viv_status.battery_voltage;
   if(!battery_voltage)
     battery_voltage = 0.0;

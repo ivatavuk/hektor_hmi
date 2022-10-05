@@ -46,7 +46,12 @@ var cmd_vel_listener = new ROSLIB.Topic({
 });
 
 cmd_vel_listener.subscribe(function(m) {
-  viv_status = JSON.parse(localStorage.getItem('viv'));
+  if(!localStorage.getItem('viv')) {
+    viv_status = {};
+  }
+  else {
+    viv_status = JSON.parse(localStorage.getItem('viv'));
+  }
   viv_status.forwardVel = m.linear.x;
   viv_status.angularVel = m.angular.z;
   localStorage.setItem("viv",  JSON.stringify(viv_status));
@@ -59,7 +64,12 @@ var tank_back_listener = new ROSLIB.Topic({
 });
 
 tank_back_listener.subscribe(function(m) {
-  viv_status = JSON.parse(localStorage.getItem('viv'));
+  if(!localStorage.getItem('viv')) {
+    viv_status = {};
+  }
+  else {
+    viv_status = JSON.parse(localStorage.getItem('viv'));
+  }
   viv_status.backTankVolume = m.data;
   localStorage.setItem("viv",  JSON.stringify(viv_status));
 });
@@ -71,7 +81,12 @@ var tank_front_listener = new ROSLIB.Topic({
 });
 
 tank_front_listener.subscribe(function(m) {
-  viv_status = JSON.parse(localStorage.getItem('viv'));
+  if(!localStorage.getItem('viv')) {
+    viv_status = {};
+  }
+  else {
+    viv_status = JSON.parse(localStorage.getItem('viv'));
+  }
   viv_status.frontTankVolume = m.data;
   localStorage.setItem("viv",  JSON.stringify(viv_status));
 });
@@ -83,7 +98,12 @@ var battery_state_listener = new ROSLIB.Topic({
 });
 
 battery_state_listener.subscribe(function(m) {
-  viv_status = JSON.parse(localStorage.getItem('viv'));
+  if(!localStorage.getItem('viv')) {
+    viv_status = {};
+  }
+  else {
+    viv_status = JSON.parse(localStorage.getItem('viv'));
+  }
   viv_status.current_battery_percent = m.data;
   localStorage.setItem("viv",  JSON.stringify(viv_status));
 });
@@ -95,7 +115,12 @@ var measured_current_listener = new ROSLIB.Topic({
 });
 
 measured_current_listener.subscribe(function(m) {
-  viv_status = JSON.parse(localStorage.getItem('viv'));
+  if(!localStorage.getItem('viv')) {
+    viv_status = {};
+  }
+  else {
+    viv_status = JSON.parse(localStorage.getItem('viv'));
+  }
   viv_status.measured_current = m.data;
   localStorage.setItem("viv",  JSON.stringify(viv_status));
 });
@@ -107,7 +132,30 @@ var battery_voltage_listener = new ROSLIB.Topic({
 });
 
 battery_voltage_listener.subscribe(function(m) {
-  viv_status = JSON.parse(localStorage.getItem('viv'));
+  if(!localStorage.getItem('viv')) {
+    viv_status = {};
+  }
+  else {
+    viv_status = JSON.parse(localStorage.getItem('viv'));
+  }
   viv_status.battery_voltage = m.data;
+  localStorage.setItem("viv",  JSON.stringify(viv_status));
+});
+
+var driver_state_listener = new ROSLIB.Topic({
+  ros : ros,
+  name : '/viv/viv_epos_driver/joint_state',
+  messageType : 'sensor_msgs/JointState'
+});
+
+driver_state_listener.subscribe(function(m) {
+  if(!localStorage.getItem('viv')) {
+    viv_status = {};
+  }
+  else {
+    viv_status = JSON.parse(localStorage.getItem('viv'));
+  }
+  viv_status.drive_data_pos = m.position;
+  viv_status.drive_data_vel = m.velocity;
   localStorage.setItem("viv",  JSON.stringify(viv_status));
 });
