@@ -575,10 +575,11 @@ body {
   width: 500px;
   color: white;
   padding: 50px;
+  table-layout: fixed;
 }
 
 .info-table-right-column {
-  width: 250px;
+  width: 200px;
 }
 
 .info-table-right-column-small {
