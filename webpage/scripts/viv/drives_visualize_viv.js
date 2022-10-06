@@ -13,10 +13,10 @@ function drivesTimerCallback() {
   current_velocities = viv_status.drive_data_vel;
   try
   {
-    document.getElementById("drive_1").innerHTML = Math.round(current_velocities[0] * 100) / 100;
-    document.getElementById("drive_2").innerHTML = Math.round(current_velocities[1] * 100) / 100;
-    document.getElementById("drive_3").innerHTML = Math.round(current_velocities[2] * 100) / 100;
-    document.getElementById("drive_4").innerHTML = Math.round(current_velocities[3] * 100) / 100;
+    document.getElementById("drive_1").innerHTML = Math.round(current_velocities[0] * 100) / 100 + " rad/s";
+    document.getElementById("drive_2").innerHTML = Math.round(current_velocities[1] * 100) / 100 + " rad/s";
+    document.getElementById("drive_3").innerHTML = Math.round(current_velocities[2] * 100) / 100 + " rad/s";
+    document.getElementById("drive_4").innerHTML = Math.round(current_velocities[3] * 100) / 100 + " rad/s";
   }
   catch
   {
