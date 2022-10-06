@@ -13,8 +13,7 @@ function batteryTimerCallback() {
   }
   
   current_battery_percent = viv_status.current_battery_percent;
-  
-  if(!current_battery_percent)
+  if(!current_battery_percent && current_battery_percent !== 0)
     current_battery_percent = 100;
 
   if (current_battery_percent != 100 && current_battery_percent != 0)

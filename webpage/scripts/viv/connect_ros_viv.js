@@ -88,9 +88,10 @@ tank_front_listener.subscribe(function(m) {
     viv_status = JSON.parse(localStorage.getItem('viv'));
   }
   viv_status.frontTankVolume = m.data;
-  localStorage.setItem("viv",  JSON.stringify(viv_status));
+  localStorage.setItem("viv",  JSON.stringify(viv_status)); 
 });
 
+/*
 var battery_state_listener = new ROSLIB.Topic({
   ros : ros,
   name : '/viv/battery_state',
@@ -107,6 +108,7 @@ battery_state_listener.subscribe(function(m) {
   viv_status.current_battery_percent = m.data;
   localStorage.setItem("viv",  JSON.stringify(viv_status));
 });
+*/
 
 var measured_current_listener = new ROSLIB.Topic({
   ros : ros,
@@ -138,7 +140,19 @@ battery_voltage_listener.subscribe(function(m) {
   else {
     viv_status = JSON.parse(localStorage.getItem('viv'));
   }
-  viv_status.battery_voltage = m.data;
+
+  battery_voltage = m.data;
+  viv_status.battery_voltage = battery_voltage;
+  full_battery_voltage = 55;
+  empty_battery_voltage = 51;
+  line_coeff = 100.0 / (full_battery_voltage - empty_battery_voltage);
+  battery_percentage = line_coeff * (battery_voltage - empty_battery_voltage);
+  if (battery_percentage > 100.0)
+    battery_percentage = 100.0;
+  if (battery_percentage < 0.0)
+    battery_percentage = 0.0;
+
+  viv_status.current_battery_percent = battery_percentage;
   localStorage.setItem("viv",  JSON.stringify(viv_status));
 });
 
