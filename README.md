@@ -1,5 +1,5 @@
-# VIV HMI
-VIV HMI package
+# HEKTOR HMI
+HEKTOR HMI package
 
   roslaunch viv_hmi start_hmi.launch   
 

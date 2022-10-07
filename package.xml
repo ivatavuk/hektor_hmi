@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>viv_hmi</name>
+  <name>hektor_hmi</name>
   <version>0.0.0</version>
-  <description>The viv_hmi package</description>
+  <description>The hektor_hmi package</description>
 
   <maintainer email="ivo.vatavuk@fer.hr">Ivo Vatavuk</maintainer>
 
