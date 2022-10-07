@@ -173,3 +173,22 @@ driver_state_listener.subscribe(function(m) {
   viv_status.drive_data_vel = m.velocity;
   localStorage.setItem("viv",  JSON.stringify(viv_status));
 });
+
+var kinova_state_listener = new ROSLIB.Topic({
+  ros : ros,
+  name : '/my_gen3/joint_states',
+  messageType : 'sensor_msgs/JointState'
+});
+
+kinova_state_listener.subscribe(function(m) {
+  if(!localStorage.getItem('viv')) {
+    viv_status = {};
+  }
+  else {
+    viv_status = JSON.parse(localStorage.getItem('viv'));
+  }
+  viv_status.kinova_joint_pos = m.position;
+  viv_status.kinova_joint_vel = m.velocity;
+  viv_status.kinova_joint_eff = m.effort;
+  localStorage.setItem("viv",  JSON.stringify(viv_status));
+});
