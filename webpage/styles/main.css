@@ -709,21 +709,21 @@ body {
 
 #drive_1_div {
   position: absolute;
-  left: 300px;
-  top: -20px;
-}
-#drive_2_div {
-  position: absolute;
   left: 500px;
   top: 130px;
 }
-#drive_3_div {
+#drive_2_div {
   position: absolute;
   left: 20px;
   top: 280px;
 }
-#drive_4_div {
+#drive_3_div {
   position: absolute;
   left: -100px;
   top: 100px;
+}
+#drive_4_div {
+  position: absolute;
+  left: 300px;
+  top: -20px;
 }
