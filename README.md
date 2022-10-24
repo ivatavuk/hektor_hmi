@@ -7,9 +7,9 @@ Human Machine Interface developed for the heterogenous robotic system used in th
 
 ## 🛠️ Usage
 
-    roslaunch viv_hmi start_hmi.launch   
+    roslaunch hektor_hmi start_hmi.launch   
 
-in viv_hmi/webpage
+in hektor_hmi/webpage
 
     python3 -m http.server 7000
 
